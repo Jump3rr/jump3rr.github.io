@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mobile games - Dashy Hen, Loop Leap, Ricochet Lab, Snap Wheel, Trowel &amp; Error</title>
+    <meta
+      name="description"
+      content="Original mobile games for Android and iOS: Dashy Hen, Loop Leap, Ricochet Lab, Snap Wheel and Trowel & Error."
+    />
+    <meta name="theme-color" content="#f4f2ec" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/fonts/newsreader-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/hanken-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <style>
+      /* Fonts are served from this site, not from Google Fonts. */
+      @font-face {
+        font-family: 'Newsreader';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(assets/fonts/newsreader-latin-400-normal.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'Newsreader';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(assets/fonts/newsreader-latin-ext-400-normal.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: 'Newsreader';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(assets/fonts/newsreader-latin-400-italic.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'Newsreader';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(assets/fonts/newsreader-latin-ext-400-italic.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: 'Hanken Grotesk';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(assets/fonts/hanken-grotesk-latin-400-normal.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'Hanken Grotesk';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(assets/fonts/hanken-grotesk-latin-ext-400-normal.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: 'Hanken Grotesk';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(assets/fonts/hanken-grotesk-latin-500-normal.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'Hanken Grotesk';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(assets/fonts/hanken-grotesk-latin-ext-500-normal.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      :root {
+        --paper: #f4f2ec;
+        --ink: #151513;
+        --muted: #6e6a62;
+        --rule: rgba(21, 21, 19, 0.14);
+        --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+        --sans: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        --gutter: clamp(20px, 5vw, 72px);
+        color-scheme: light dark;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #0e0e0d;
+          --ink: #ecebe6;
+          --muted: #8f8b83;
+          --rule: rgba(236, 235, 230, 0.14);
+        }
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        -webkit-text-size-adjust: 100%;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font: 400 17px/1.55 var(--sans);
+      }
+
+      ::selection {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:focus-visible {
+        outline: 1.5px solid var(--ink);
+        outline-offset: 4px;
+      }
+
+      .wrap {
+        width: 100%;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 var(--gutter);
+      }
+
+      /* ---------- Top ---------- */
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 28px;
+        font-size: 14px;
+        letter-spacing: 0.01em;
+      }
+
+      .mark {
+        font-weight: 500;
+      }
+
+      .mark svg {
+        display: block;
+        width: 26px;
+        height: 26px;
+      }
+
+      .mark rect {
+        fill: var(--ink);
+      }
+
+      .mark circle {
+        fill: var(--paper);
+      }
+
+      .platforms {
+        color: var(--muted);
+      }
+
+      .intro {
+        padding: clamp(96px, 17vh, 190px) 0 clamp(72px, 12vh, 132px);
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 15ch;
+        font: 400 clamp(44px, 7.4vw, 104px) / 0.98 var(--serif);
+        letter-spacing: -0.025em;
+      }
+
+      h1 em {
+        font-style: italic;
+        letter-spacing: -0.02em;
+      }
+
+      .lede {
+        margin: clamp(28px, 4vw, 44px) 0 0;
+        max-width: 38ch;
+        color: var(--muted);
+        font-size: clamp(16px, 1.4vw, 19px);
+      }
+
+      /* ---------- Index of games ---------- */
+
+      .label {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 14px;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .games {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .game {
+        --hue: var(--ink);
+        display: grid;
+        grid-template-columns: 3.2rem 64px minmax(0, 1fr) 9rem 13rem;
+        align-items: center;
+        gap: 0 clamp(16px, 2.4vw, 32px);
+        padding: 26px 0;
+        border-top: 1px solid var(--rule);
+      }
+
+      .num {
+        font: 400 15px/1 var(--sans);
+        font-variant-numeric: tabular-nums;
+        color: var(--muted);
+        transition: color 0.25s;
+      }
+
+      .icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 15px;
+        display: block;
+        /* A hairline keeps dark icons from melting into a dark page (and light ones into a light one). */
+        box-shadow: 0 0 0 1px var(--rule);
+      }
+
+      .title h2 {
+        margin: 0;
+        font: 400 clamp(28px, 3.2vw, 42px) / 1.05 var(--serif);
+        letter-spacing: -0.015em;
+        transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+
+      .title p {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.45;
+      }
+
+      .genre {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+        font-size: 14px;
+        text-align: right;
+      }
+
+      .links a {
+        border-bottom: 1px solid var(--rule);
+        transition: border-color 0.2s;
+      }
+
+      .links a:hover {
+        border-color: var(--ink);
+      }
+
+      .soon {
+        color: var(--muted);
+      }
+
+      @media (hover: hover) {
+        .game:hover .num {
+          color: var(--hue);
+        }
+
+        .game:hover .title h2 {
+          transform: translateX(8px);
+        }
+      }
+
+      /* The screenshot that trails the pointer over a row (pointer devices only). */
+      .peek {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 5;
+        width: 200px;
+        aspect-ratio: 9 / 16;
+        border-radius: 22px;
+        object-fit: cover;
+        pointer-events: none;
+        opacity: 0;
+        box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.35);
+        transition: opacity 0.25s;
+        will-change: transform;
+      }
+
+      .peek.on {
+        opacity: 1;
+      }
+
+      /* ---------- Closing ---------- */
+
+      .about {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr);
+        gap: 18px clamp(32px, 6vw, 96px);
+        align-items: baseline;
+        padding: clamp(96px, 14vh, 160px) 0;
+      }
+
+      .about h3 {
+        margin: 0;
+        font: 400 13px/1.4 var(--sans);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .about p {
+        margin: 0;
+        max-width: 26ch;
+        font: 400 clamp(26px, 3vw, 40px) / 1.2 var(--serif);
+        letter-spacing: -0.01em;
+      }
+
+      .about p span {
+        color: var(--muted);
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 22px 0 32px;
+        border-top: 1px solid var(--rule);
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      footer a:hover {
+        color: var(--ink);
+      }
+
+      /* ---------- Narrow screens ---------- */
+
+      @media (max-width: 880px) {
+        .game {
+          grid-template-columns: 52px minmax(0, 1fr);
+          grid-template-areas:
+            'icon title'
+            'icon meta';
+          gap: 4px 18px;
+          align-items: start;
+          padding: 24px 0;
+        }
+
+        .num {
+          display: none;
+        }
+
+        .icon {
+          grid-area: icon;
+          width: 52px;
+          height: 52px;
+          border-radius: 12px;
+        }
+
+        .title {
+          grid-area: title;
+        }
+
+        .genre {
+          display: none;
+        }
+
+        .links {
+          grid-area: meta;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          gap: 4px 18px;
+          margin-top: 8px;
+          text-align: left;
+        }
+
+        .about {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- Arrival ---------- */
+
+      @media (prefers-reduced-motion: no-preference) {
+        .rise {
+          animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+        }
+
+        .rise.d1 {
+          animation-delay: 0.08s;
+        }
+
+        .rise.d2 {
+          animation-delay: 0.16s;
+        }
+
+        @keyframes rise {
+          from {
+            opacity: 0;
+            transform: translateY(14px);
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a class="mark" href="./" aria-label="Home">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" /><circle cx="32" cy="32" r="9" /></svg>
+        </a>
+        <span class="platforms">Android · iOS</span>
+      </header>
+
+      <section class="intro">
+        <h1 class="rise">Small games, built to be played <em>a little longer</em> than planned.</h1>
+        <p class="lede rise d1">
+          Original mobile games for Android and iOS, designed and developed independently in Poland.
+          Free to play, supported by ads.
+        </p>
+      </section>
+
+      <section id="games" class="rise d2" aria-label="Games">
+        <div class="label"><span>Games</span><span>05</span></div>
+
+        <!--
+          When a game goes live, replace its <span class="soon"> with a link, e.g.
+          <a href="https://play.google.com/store/apps/details?id=com.dashyhen.game">Google Play ↗</a>
+        -->
+        <ol class="games">
+          <li class="game" style="--hue: #2f8455" data-peek="assets/games/dashy-hen-play.webp">
+            <span class="num">01</span>
+            <img class="icon" src="assets/games/dashy-hen.webp" alt="" width="64" height="64" />
+            <div class="title">
+              <h2>Dashy Hen</h2>
+              <p>A hen that can’t stop running, and the eggs she leaves behind.</p>
+            </div>
+            <span class="genre">Puzzle</span>
+            <div class="links">
+              <span class="soon">Google Play - soon</span>
+              <a href="https://sites.google.com/view/dashy-hen-privacy-policy">Privacy policy ↗</a>
+            </div>
+          </li>
+
+          <li class="game" style="--hue: #7ad7ff" data-peek="assets/games/loop-leap-play.webp">
+            <span class="num">02</span>
+            <img class="icon" src="assets/games/loop-leap.webp" alt="" width="64" height="64" />
+            <div class="title">
+              <h2>Loop Leap</h2>
+              <p>One tap, one comet, an endless climb from orbit to orbit.</p>
+            </div>
+            <span class="genre">Arcade</span>
+            <div class="links">
+              <span class="soon">Google Play - soon</span>
+              <a href="https://sites.google.com/view/loopleapprivacypolicy">Privacy policy ↗</a>
+            </div>
+          </li>
+
+          <li class="game" style="--hue: #7c3aed" data-peek="assets/games/ricochet-lab-play.webp">
+            <span class="num">03</span>
+            <img class="icon" src="assets/games/ricochet-lab.webp" alt="" width="64" height="64" />
+            <div class="title">
+              <h2>Ricochet Lab</h2>
+              <p>Bank shots and chips that fire on every bounce, chamber after chamber.</p>
+            </div>
+            <span class="genre">Puzzle</span>
+            <div class="links">
+              <span class="soon">Google Play - soon</span>
+              <a href="https://sites.google.com/view/ricochetlabprivacypolicy">Privacy policy ↗</a>
+            </div>
+          </li>
+
+          <li class="game" style="--hue: #e8b923" data-peek="assets/games/snap-wheel-play.webp">
+            <span class="num">04</span>
+            <img class="icon" src="assets/games/snap-wheel.webp" alt="" width="64" height="64" />
+            <div class="title">
+              <h2>Snap Wheel</h2>
+              <p>A hamster wheel where every plank you jump from snaps behind you.</p>
+            </div>
+            <span class="genre">Arcade</span>
+            <div class="links">
+              <span class="soon">Google Play - soon</span>
+              <a href="https://sites.google.com/view/snap-wheel-privacy-policy">Privacy policy ↗</a>
+            </div>
+          </li>
+
+          <li class="game" style="--hue: #f3722c" data-peek="assets/games/trowel-and-error-play.webp">
+            <span class="num">05</span>
+            <img class="icon" src="assets/games/trowel-and-error.webp" alt="" width="64" height="64" />
+            <div class="title">
+              <h2>Trowel &amp; Error</h2>
+              <p>Read the numbers, dig up relics, fill a museum.</p>
+            </div>
+            <span class="genre">Puzzle</span>
+            <div class="links">
+              <span class="soon">Google Play - soon</span>
+              <a href="https://sites.google.com/view/trowelanderrorprivacypolicy">Privacy policy ↗</a>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="about">
+        <h3>About</h3>
+        <p>
+          Each game is a single idea taken seriously: simple to pick up, with enough depth to come back to.
+          <span>Nothing to sign up for - your progress stays on your phone.</span>
+        </p>
+      </section>
+
+      <footer>
+        <span>© 2026</span>
+        <a href="app-ads.txt">app-ads.txt</a>
+      </footer>
+    </div>
+
+    <img class="peek" alt="" aria-hidden="true" />
+
+    <script>
+      // A gameplay screenshot follows the pointer over each row (mouse and trackpad only).
+      (function () {
+        if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+        var peek = document.querySelector('.peek');
+        var x = 0, y = 0, px = 0, py = 0, active = null, raf = 0;
+        // Preload so the first hover is instant.
+        document.querySelectorAll('.game').forEach(function (row) {
+          new Image().src = row.dataset.peek;
+        });
+        function frame() {
+          px += (x - px) * 0.18;
+          py += (y - py) * 0.18;
+          var tilt = Math.max(-6, Math.min(6, (x - px) * 0.08));
+          peek.style.transform = 'translate(' + (px + 36) + 'px,' + (py - 180) + 'px) rotate(' + tilt + 'deg)';
+          raf = active ? requestAnimationFrame(frame) : 0;
+        }
+        document.querySelectorAll('.game').forEach(function (row) {
+          row.addEventListener('mouseenter', function (e) {
+            if (!active) { px = e.clientX; py = e.clientY; }
+            active = row;
+            peek.src = row.dataset.peek;
+            peek.classList.add('on');
+            if (!raf) raf = requestAnimationFrame(frame);
+          });
+          row.addEventListener('mouseleave', function () {
+            active = null;
+            peek.classList.remove('on');
+          });
+        });
+        window.addEventListener('mousemove', function (e) { x = e.clientX; y = e.clientY; }, { passive: true });
+      })();
+    </script>
+  </body>
+</html>
