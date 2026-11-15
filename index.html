@@ -343,6 +343,20 @@
         color: var(--muted);
       }
 
+      .about.support {
+        padding-top: 0;
+      }
+
+      .mail {
+        background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+        overflow-wrap: anywhere;
+        transition: color 0.3s;
+      }
+
+      .mail:hover {
+        color: var(--muted);
+      }
+
       footer {
         display: flex;
         justify-content: space-between;
@@ -530,6 +544,14 @@
         <p>
           Each game is a single idea taken seriously: simple to pick up, with enough depth to come back to.
           <span>Nothing to sign up for - your progress stays on your phone.</span>
+        </p>
+      </section>
+
+      <section id="support" class="about support">
+        <h3>Support</h3>
+        <p>
+          <span>Questions, bugs or ideas?</span>
+          <a class="mail" href="mailto:theneonxd@gmail.com">theneonxd@gmail.com</a>
         </p>
       </section>
 
